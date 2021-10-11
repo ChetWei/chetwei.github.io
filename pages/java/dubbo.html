@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>springcloud alibaba nacos dubbo 整合 | 小魏同学的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/icon.png">
+    <meta name="description" content="点滴学习记录">
+    
+    <link rel="preload" href="/assets/css/0.styles.fd72d8d4.css" as="style"><link rel="preload" href="/assets/js/app.5c1b57ed.js" as="script"><link rel="preload" href="/assets/js/2.219bfd91.js" as="script"><link rel="preload" href="/assets/js/16.ef638dbd.js" as="script"><link rel="prefetch" href="/assets/js/10.33d18704.js"><link rel="prefetch" href="/assets/js/11.98e3596c.js"><link rel="prefetch" href="/assets/js/12.52c259df.js"><link rel="prefetch" href="/assets/js/13.0c68c86f.js"><link rel="prefetch" href="/assets/js/14.770f2800.js"><link rel="prefetch" href="/assets/js/15.56d2c625.js"><link rel="prefetch" href="/assets/js/17.37c996f0.js"><link rel="prefetch" href="/assets/js/18.83288f53.js"><link rel="prefetch" href="/assets/js/19.5ad535fb.js"><link rel="prefetch" href="/assets/js/20.a3d384c2.js"><link rel="prefetch" href="/assets/js/21.274e9fa8.js"><link rel="prefetch" href="/assets/js/22.08bd1ce9.js"><link rel="prefetch" href="/assets/js/23.53acf99f.js"><link rel="prefetch" href="/assets/js/24.5c0072b9.js"><link rel="prefetch" href="/assets/js/3.bb6241e9.js"><link rel="prefetch" href="/assets/js/4.7adb1798.js"><link rel="prefetch" href="/assets/js/5.d3359473.js"><link rel="prefetch" href="/assets/js/6.5eff19f1.js"><link rel="prefetch" href="/assets/js/7.8dbf1c37.js"><link rel="prefetch" href="/assets/js/8.0e0f227d.js"><link rel="prefetch" href="/assets/js/9.82bb104a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fd72d8d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/icon.png" alt="小魏同学的博客" class="logo"> <span class="site-name can-hide">小魏同学的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/java/jdk8.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/pages/java/dubbo.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java框架
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/deeplearning/01-CNN手写数字.html" class="nav-link">
+  深度学习
+</a></div><div class="nav-item"><a href="/pages/tools/docker操作.html" class="nav-link">
+  工具
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/java/jdk8.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/pages/java/dubbo.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java框架
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/deeplearning/01-CNN手写数字.html" class="nav-link">
+  深度学习
+</a></div><div class="nav-item"><a href="/pages/tools/docker操作.html" class="nav-link">
+  工具
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/java/01-jdk8.html" class="sidebar-link">jdk8新特性</a></li><li><a href="/pages/java/02-spring.html" class="sidebar-link">Spring5</a></li><li><a href="/pages/java/dubbo.html" aria-current="page" class="active sidebar-link">springcloud alibaba nacos dubbo 整合</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/java/dubbo.html#_1-服务提供方" class="sidebar-link">1. 服务提供方</a></li><li class="sidebar-sub-header"><a href="/pages/java/dubbo.html#_2-服务消费方" class="sidebar-link">2.服务消费方</a></li></ul></li><li><a href="/pages/java/rocketmq.html" class="sidebar-link">/pages/java/rocketmq.html</a></li><li><a href="/pages/java/seata.html" class="sidebar-link">seata 分布式事务</a></li><li><a href="/pages/java/springboot.html" class="sidebar-link">springboot</a></li><li><a href="/pages/java/springboot_thread.html" class="sidebar-link">在springboot项目中使用异步来发送短信</a></li><li><a href="/pages/java/springcloud.html" class="sidebar-link">开始搭建 springcloud 脚手架</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>深度学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="springcloud-alibaba-nacos-dubbo-整合"><a href="#springcloud-alibaba-nacos-dubbo-整合" class="header-anchor">#</a> springcloud alibaba nacos dubbo 整合</h1> <div class="language-html line-numbers-mode"><pre class="language-html"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring.cloud.version</span><span class="token punctuation">&gt;</span></span>Hoxton.SR8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring.cloud.version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud-alibaba.version</span><span class="token punctuation">&gt;</span></span>2.2.5.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud-alibaba.version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring.boot.version</span><span class="token punctuation">&gt;</span></span>2.3.2.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring.boot.version</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">&gt;</span></span>
+ 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!--springcloud 版本控制--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>${spring.cloud.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+            <span class="token comment">&lt;!--springcloud alibaba 版本控制--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-alibaba-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>${spring-cloud-alibaba.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+            <span class="token comment">&lt;!--springboot 版本--&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>${spring-boot.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>在<strong>服务提供方</strong>和<strong>服务消费方</strong>引入依赖</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code> <span class="token comment">&lt;!--使用dubbo作为服务之间的调用--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_1-服务提供方"><a href="#_1-服务提供方" class="header-anchor">#</a> 1. 服务提供方</h2> <ol><li><p>定义接口</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IAccountDubboApi</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">void</span> <span class="token function">deductMoney</span><span class="token punctuation">(</span><span class="token keyword">int</span> userId<span class="token punctuation">,</span> <span class="token class-name">BigDecimal</span> money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>服务方引入dubbo接口所在模块的依赖</p></li></ol> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.it.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>account-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>实现接口</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * Created on 2021/6/12.
+ *这里实现了dubbo的接口IAccountDubboApi，作为dubbo服务的提供方
+ * @author thomas
+ */</span>
+<span class="token annotation punctuation">@DubboService</span> <span class="token comment">//使用的是dubbo的注解</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AccountDubboApiImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IAccountDubboApi</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">AccountMapper</span> accountMapper<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deductMoney</span><span class="token punctuation">(</span><span class="token keyword">int</span> userId<span class="token punctuation">,</span> <span class="token class-name">BigDecimal</span> money<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">AccountEntity</span> userDB <span class="token operator">=</span> accountMapper<span class="token punctuation">.</span><span class="token function">selectOne</span><span class="token punctuation">(</span>
+                <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AccountEntity</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token class-name">AccountEntity</span><span class="token operator">::</span><span class="token function">getUserId</span><span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        userDB<span class="token punctuation">.</span><span class="token function">setMoney</span><span class="token punctuation">(</span>userDB<span class="token punctuation">.</span><span class="token function">getMoney</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        accountMapper<span class="token punctuation">.</span><span class="token function">updateById</span><span class="token punctuation">(</span>userDB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>3.配置文件</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9001</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">main</span><span class="token punctuation">:</span>
+    <span class="token key atrule">allow-bean-definition-overriding</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>account<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+        <span class="token key atrule">namespace</span><span class="token punctuation">:</span> bb34df57<span class="token punctuation">-</span>b423<span class="token punctuation">-</span>4fc0<span class="token punctuation">-</span>8dd3<span class="token punctuation">-</span>f43dbefc0282
+  <span class="token comment">######################mysql数据源##########################</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">druid</span><span class="token punctuation">:</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/fastcloud<span class="token punctuation">?</span>serverTimezone=Asia/Shanghai<span class="token important">&amp;useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useSSL=false</span>
+      <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver
+      <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+      <span class="token key atrule">password</span><span class="token punctuation">:</span> opportunity
+
+<span class="token comment">#dubbo配置</span>
+<span class="token key atrule">dubbo</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+    <span class="token comment"># qos=Quality of Service 是Dubbo的在线运维命令，可以对服务进行动态的配置、控制(上下线)及查询，具体参考：https://blog.csdn.net/u012988901/article/details/84503672</span>
+    <span class="token key atrule">qos-enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment">#dubbo服务扫描 实现api接口的 包路径</span>
+  <span class="token key atrule">scan</span><span class="token punctuation">:</span>
+    <span class="token key atrule">base-packages</span><span class="token punctuation">:</span> com.it.cloud
+  <span class="token comment">#dubbo服务暴露的协议配置 name协议名称，port协议端口 -1 为自增端口20880 开始</span>
+  <span class="token key atrule">protocol</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> dubbo
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+  <span class="token key atrule">registry</span><span class="token punctuation">:</span>
+    <span class="token key atrule">address</span><span class="token punctuation">:</span> nacos<span class="token punctuation">:</span>//$<span class="token punctuation">{</span>spring.cloud.nacos.discovery.server<span class="token punctuation">-</span>addr<span class="token punctuation">}</span>
+    parameters<span class="token punctuation">[</span>namespace<span class="token punctuation">]</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.cloud.nacos.discovery.namespace<span class="token punctuation">}</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">subscribed-services</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span> <span class="token comment">#这里服务提供方不需要订阅其他服务，不然默认订阅所有服务消耗资源</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h2 id="_2-服务消费方"><a href="#_2-服务消费方" class="header-anchor">#</a> 2.服务消费方</h2> <p>1、在需要使用到服务提供的接口时引入</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code>    <span class="token annotation punctuation">@DubboReference</span> <span class="token comment">//dubbo的包</span>
+    <span class="token keyword">private</span> <span class="token class-name">IAccountDubboApi</span> accountDubboApi<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>2、配置文件</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9002</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>order<span class="token punctuation">-</span>service
+
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+        <span class="token key atrule">namespace</span><span class="token punctuation">:</span> bb34df57<span class="token punctuation">-</span>b423<span class="token punctuation">-</span>4fc0<span class="token punctuation">-</span>8dd3<span class="token punctuation">-</span>f43dbefc0282
+
+  <span class="token comment">######################mysql数据源##########################</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">druid</span><span class="token punctuation">:</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/fastcloud<span class="token punctuation">?</span>serverTimezone=Asia/Shanghai<span class="token important">&amp;useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useSSL=false</span>
+      <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver
+      <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+      <span class="token key atrule">password</span><span class="token punctuation">:</span> opportunity
+
+<span class="token key atrule">dubbo</span><span class="token punctuation">:</span>
+  <span class="token comment">#dubbo服务暴露的协议配置 name协议名称，port协议端口 -1 为自增端口 20880 开始</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.application.name<span class="token punctuation">}</span>
+    <span class="token key atrule">qos-enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">protocol</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> dubbo
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+  <span class="token key atrule">registry</span><span class="token punctuation">:</span>
+    <span class="token comment"># 其中子属性 address 的值 &quot;spring-com.it.cloud://localhost&quot;，说明挂载到 Spring Cloud 注册中心</span>
+    <span class="token comment"># 使用nacos://localhost:8848表示挂载到nacos注册中心，这种会在nacos上展示服务名称：providers:暴露接口包名:版本:组名</span>
+    <span class="token key atrule">address</span><span class="token punctuation">:</span> nacos<span class="token punctuation">:</span>//$<span class="token punctuation">{</span>spring.cloud.nacos.discovery.server<span class="token punctuation">-</span>addr<span class="token punctuation">}</span>
+    parameters<span class="token punctuation">[</span>namespace<span class="token punctuation">]</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>spring.cloud.nacos.discovery.namespace<span class="token punctuation">}</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">subscribed-services</span><span class="token punctuation">:</span> &quot;app<span class="token punctuation">-</span>account<span class="token punctuation">-</span>service&quot; //订阅服务提供方
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/java/02-spring.html" class="prev">
+        Spring5
+      </a></span> <span class="next"><a href="/pages/java/rocketmq.html">
+        /pages/java/rocketmq.html
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.5c1b57ed.js" defer></script><script src="/assets/js/2.219bfd91.js" defer></script><script src="/assets/js/16.ef638dbd.js" defer></script>
+  </body>
+</html>
